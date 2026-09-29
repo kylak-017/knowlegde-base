@@ -11,6 +11,7 @@ Welcome! This is my digital garden for physics and chemistry research notes.
 
 ### 1. Computational Chemistry
 * [[KK-Fin/Computational-Chemistry/Initial Learnings|Initial Learnings]]
+* [[Initial Learnings.svg]]
 	* This is a hand-written note compiled with the following information:
 		* Purpose of DFT/DMFT
 		* DFT Theory/Assumptions
