@@ -2,7 +2,7 @@
 title: Welcome to My Knowledge Base
 ---
 ---
-title: Kyla's Knowledge Base
+Kyla's Knowledge Base
 ---
 
 Welcome! This is my digital garden for physics and chemistry research notes.
