@@ -1,0 +1,80 @@
+Starting DMFT Iteration 1/40
+Img(Sigma[0]) = -2.9555
+Starting DMFT Iteration 2/40
+Img(Sigma[0]) = -5.8412
+Starting DMFT Iteration 3/40
+Img(Sigma[0]) = -8.8211
+Starting DMFT Iteration 4/40
+Img(Sigma[0]) = -11.4803
+Starting DMFT Iteration 5/40
+Img(Sigma[0]) = -13.8323
+Starting DMFT Iteration 6/40
+Img(Sigma[0]) = -15.9960
+Starting DMFT Iteration 7/40
+Img(Sigma[0]) = -16.9132
+Starting DMFT Iteration 8/40
+Img(Sigma[0]) = -15.2992
+Starting DMFT Iteration 9/40
+Img(Sigma[0]) = -17.1195
+Starting DMFT Iteration 10/40
+Img(Sigma[0]) = -16.0038
+Starting DMFT Iteration 11/40
+Img(Sigma[0]) = -16.0241
+Starting DMFT Iteration 12/40
+Img(Sigma[0]) = -15.0870
+Starting DMFT Iteration 13/40
+Img(Sigma[0]) = -14.8942
+Starting DMFT Iteration 14/40
+Img(Sigma[0]) = -15.0939
+Starting DMFT Iteration 15/40
+Img(Sigma[0]) = -14.1226
+Starting DMFT Iteration 16/40
+Img(Sigma[0]) = -10.8107
+Starting DMFT Iteration 17/40
+Img(Sigma[0]) = -10.9028
+Starting DMFT Iteration 18/40
+Img(Sigma[0]) = -12.7056
+Starting DMFT Iteration 19/40
+Img(Sigma[0]) = -14.0482
+Starting DMFT Iteration 20/40
+Img(Sigma[0]) = -13.3956
+Starting DMFT Iteration 21/40
+Img(Sigma[0]) = -15.7566
+Starting DMFT Iteration 22/40
+Img(Sigma[0]) = -16.2390
+Starting DMFT Iteration 23/40
+Img(Sigma[0]) = -16.6640
+Starting DMFT Iteration 24/40
+Img(Sigma[0]) = -16.7193
+Starting DMFT Iteration 25/40
+Img(Sigma[0]) = -15.8999
+Starting DMFT Iteration 26/40
+Img(Sigma[0]) = -16.9497
+Starting DMFT Iteration 27/40
+Img(Sigma[0]) = -17.0728
+Starting DMFT Iteration 28/40
+Img(Sigma[0]) = -19.6995
+Starting DMFT Iteration 29/40
+Img(Sigma[0]) = -20.5237
+Starting DMFT Iteration 30/40
+Img(Sigma[0]) = -17.7773
+Starting DMFT Iteration 31/40
+Img(Sigma[0]) = -16.0199
+Starting DMFT Iteration 32/40
+Img(Sigma[0]) = -14.1270
+Starting DMFT Iteration 33/40
+Img(Sigma[0]) = -15.3372
+Starting DMFT Iteration 34/40
+Img(Sigma[0]) = -15.6519
+Starting DMFT Iteration 35/40
+Img(Sigma[0]) = -13.8219
+Starting DMFT Iteration 36/40
+Img(Sigma[0]) = -15.3164
+Starting DMFT Iteration 37/40
+Img(Sigma[0]) = -15.1926
+Starting DMFT Iteration 38/40
+Img(Sigma[0]) = -14.7724
+Starting DMFT Iteration 39/40
+Img(Sigma[0]) = -14.2453
+Starting DMFT Iteration 40/40
+Img(Sigma[0]) = -13.4391

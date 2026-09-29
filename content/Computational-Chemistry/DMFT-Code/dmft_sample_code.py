@@ -19,12 +19,12 @@ def establish_k_points(k, b1, b2, b3):
     b1_vec = [b1, 0, 0]
     b2_vec = [0, b2, 0]
     b3_vec = [0, 0, b3]
-    r_range = [(a - ((k + 1) / 2)) / k for a in range(1, k + 1)]
+    r_range = [(a - ((k + 1) / 2)) / k for a in range(1, k + 1)] #d Monkhorst-Pack grid
     fractions = list(itertools.product(r_range, repeat=3))
     kpoints = []
     for f in fractions:
         x = b1_vec[0] * f[0] + b2_vec[0] * f[1] + b3_vec[0] * f[2]
-        y = b1_vec[1] * f[0] + b2_vec[1] * f[1] + b3_vec[2] * f[2]
+        y = b1_vec[1] * f[0] + b2_vec[1] * f[1] + b3_vec[1] * f[2]
         z = b1_vec[2] * f[0] + b2_vec[2] * f[1] + b3_vec[2] * f[2]
         kpoints.append([x, y, z]) 
     return kpoints
@@ -56,15 +56,15 @@ def compute_overlap(dag_up, ann_up, dag_dn, ann_dn, beta):
 
 beta = 20.0                # Inverse temperature
 num_matsubara = 100       # Number of Matsubara frequencies
-t_hopping = 0.2          # Nearest-neighbor hopping (eV)
-mu = -0.8                # Chemical potential
+t_hopping = 0.2       # Nearest-neighbor hopping (eV)
+mu = 2.0              # Chemicl potential
 U_interaction = 4.0       # Local Coulomb repulsion (eV)
 
 num_tau = 200              # Imaginary-time grid points
 mc_steps = 20000            # Total Monte Carlo sweeps per DMFT step
 burn_in = 5000             # Thermalization sweeps
-max_dmft_iters = 100          # Number of self-consistency iterations
-alpha = 0.3                # Linear self-energy mixing factor
+max_dmft_iters = 40       # Number of self-consistency iterations
+alpha = 0.2         # Linear self-energy mixing factor (make sure it is relatively low)
 
 
 b1, b2, b3 = real_to_reciprocal(3.84, 3.84, 3.84)
@@ -194,7 +194,7 @@ for dmft_iter in range(max_dmft_iters):
         kernel = np.exp(iw_array[n] * tau_grid)
         g_imp_iw[n] = np.trapezoid(g_tau_hist * kernel, tau_grid) #trapezodial integration approximation
 
-    # Step 05: Supdate self energy
+    # Step 05: Update self energy
     self_energy_raw = g0_inverse - (1.0 / g_imp_iw)
     n_high_cutoff = int(0.6 * num_matsubara)
     self_energy_new = np.copy(self_energy_raw)
