@@ -10,7 +10,7 @@ Welcome! This is my digital garden for physics and chemistry research notes.
 ## 📂 Topics
 
 ### 1. Computational Chemistry
-* [[Computational-Chemistry/Initial Learnings|Initial Learnings]]
+* [[Computational-Chemistry/Initial Learnings]]
 	* This is a hand-written note compiled with the following information:
 		* Purpose of DFT/DMFT
 		* DFT Theory/Assumptions
@@ -19,24 +19,24 @@ Welcome! This is my digital garden for physics and chemistry research notes.
 		* DMFT Workflow
 		* Wannier Functions
 		* NQS Impurity Solvers
-* [[DFT-Code]]
+* [[Computational-Chemistry/DFT-Code]]
 	* This page introduces the self-written SCF loop using Python.
 	* It does not use any external libraries and rather uses native libraries such as **numpy.**
 	* Additionally, it uses Fermi-Dirac smearing for the degauss function.
 	* ![[Fermi-Dirac.png]]
 		* This is a brief comparison of other smearing techniques. 
-- [[DMFT-Code]]
+- [[Computational-Chemistry/DMFT-Code]]
 	- This page explains DMFT implementation.
 	- It compares accuracy to prediction model for single-band Hubbard Hamiltonian.
 	- It also elaborates on the derivation of the prediction model for said Hamiltonian.
 	- It explains the iteration number that is recommended for the accuracy for different types of systems (Mott Insulator, Doped Metallic State).
-- [[Impurity-Solver-NNs]]
+- [[Computational-Chemistry/Impurity-Solver-NNs]]
 	- This page explores in-depth annotations of:
 		- impurity solver-related research papers
 		- neural network research papers
 		- NQS research papers
 	- It also explores self-implementation of the code of impurity solver NNs.
-- [[Parameter-Automate]]
+- [[Computational-Chemistry/Parameter-Automate]]
 	- This page explores explanations of what each parameter in DMFT does and how it affects the predicted results.
 	- It compares this effect with DFPT, which has reported observations of parameters causing shifts in predicted results.
 	- It also explores the development of an algorithm that predicts and optimizes the parameters needed to analyze the properties of a random material given.

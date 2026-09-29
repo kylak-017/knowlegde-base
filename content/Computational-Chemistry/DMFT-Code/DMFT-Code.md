@@ -443,4 +443,5 @@ print(f"Img(Sigma[0]) = {self_energy_array[0].imag:.4f}")
 
 Prediction: -25.46
 Code(Trial 1):  -13.4391 [[out.txt]]
-Code (Trial 2): 
+Code (Trial 2): -17.5163 [[out2.txt]]
+Code (Trial 3): 
