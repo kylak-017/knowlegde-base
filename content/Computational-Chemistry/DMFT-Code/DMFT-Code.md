@@ -1,0 +1,11 @@
+*[[dmft_sample_code.py]]
+- Shows full NSCF implementation of DMFT cycle
+- Uses CT-HYB as impurity solver
+- Has max_dmft_iters set to 100
+- Uses a toy system of a single band Hubbard Hamiltonian:
+	- $$epsilon =  -2 \times kinetic \times  [cos(kx) + cos(ky) + cos(kz)]$$
+- $U/t$ ratio is set to $20$, making it a strongly correlating Mott insulator.
+- The predicted self-energy should be: $$Im[\Sigma\left(i\omega_0\right)]=-\frac{U^2}{4\cdot\omega_0}=\frac{-4.0^2}{4\cdot0.157}=-25.4$$
+- Hence, it is a very large negative number. 
+- If you are interested in the derivation, please look here:
+- [[]]
