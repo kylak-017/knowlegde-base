@@ -1,0 +1,50 @@
+&CONTROL
+  calculation = 'nscf'
+  restart_mode = 'restart'
+  prefix = 'ybco'
+  pseudo_dir = './pseudo/'
+  outdir = './out/'
+  verbosity = 'high'
+/
+&SYSTEM
+  ibrav = 0
+  nat = 13
+  ntyp = 4
+  nbnd = 100
+  nosym = .true.
+  noinv = .true.
+  ecutwfc = 60.0
+  ecutrho = 480.0
+  occupations = 'smearing'
+  smearing = 'gaussian'
+  degauss = 0.01
+/
+&ELECTRONS
+  conv_thr = 1.0e-8
+  mixing_beta = 0.3
+/
+ATOMIC_SPECIES
+  Ba  137.32700  Ba.pbe-spn-kjpaw_psl.1.0.0.UPF
+  Cu   63.54600  Cu.pbe-dn-kjpaw_psl.1.0.0.UPF
+  Y    88.90500  Y.pbe-spn-kjpaw_psl.1.0.0.UPF
+  O    15.99900  O.pbe-n-kjpaw_psl.1.0.0.UPF
+CELL_PARAMETERS (angstrom)
+  3.822000000000000   0.000000000000000   0.000000000000000
+  0.000000000000000   3.902998773780623   0.000000000000000
+  0.000000000000000   0.000000000000000  11.753952176884976
+ATOMIC_POSITIONS (crystal)
+  Ba   0.50000000   0.50000000   0.81939100
+  Ba   0.50000000   0.50000000   0.18060900
+  Y    0.50000000   0.50000000   0.50000000
+  Cu   0.00000000   0.00000000   0.64667800
+  Cu   0.00000000   0.00000000   0.35332200
+  Cu   0.00000000   0.00000000   0.00000000
+  O    0.00000000   0.50000000   0.00000000
+  O    0.50000000   0.00000000   0.62065300
+  O    0.50000000   0.00000000   0.37934700
+  O    0.00000000   0.50000000   0.62165100
+  O    0.00000000   0.50000000   0.37834900
+  O    0.00000000   0.00000000   0.84082000
+  O    0.00000000   0.00000000   0.15918000
+K_POINTS (automatic)
+  8 8 4 0 0 0
