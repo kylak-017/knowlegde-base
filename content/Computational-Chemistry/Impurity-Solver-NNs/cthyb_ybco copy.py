@@ -1,16 +1,3 @@
-### In-depth Exploration of CT-HYB [Gull, et al. 2011]
-- Sourced Paper: [[WERNER=continuous_time_qmc_impurity_solver.pdf]]
-- Annotated Paper: ![[Drawing 2026-09-29 16.06.26.excalidraw.svg]]
-- 
-- Sourced Paper: [[2512.08624v1.pdf]]]
-- Annotated Paper: ![[Drawing 2026-10-07 11.47.52.excalidraw.svg]]
-
-### Trying CT-HYB with TRIQS
-
-SCF/NSCF Loops Before TRIQS: [[ybco_scf.out copy]] [[ybco_nscf.out copy]]
-Download code: [[cthyb_ybco copy.py]]
-
-```python
 import numpy as np
 from triqs.utility import mpi
 from triqs.gf import MeshImFreq, BlockGf, inverse
@@ -139,30 +126,3 @@ for iteration in range(max_loops):
 
 if mpi.is_master_node():
     print("\nDMFT run completed!")
-```
-
-Showing plotted DOS:
-
-- The Padé continuation fails in this case because it allows for negative values of the spectral function, which is unrealistic. This is because the analytic continuation from the Matsuraba frequency to real frequency is an ill-posed problem due to the fact that the nosie from QMC samplign can misdirect the results. It fails to capture the sharp peaks.
-- We instead use the MaxEnt algorithm which uses a Bayesian probability system. Using an objective function, it filters out the noise and uses the strictly positive spectral function regions. The filtering is as follows:
-$$\vartheta=\alpha S-\frac12\chi^2$$
-- where S = Shannon Entropy and alpha is the regularization factor.
-![[ybco_spectral_function.png]]
-![[ybco_maxent_spectral.png]]
-
-
-### Replacing CT-HYB with NN
-##### Single Band
-- Sourced Paper: [[2511.14505v1.pdf]]
-##### Multi Band (Hubbard-Kanamori Model)
-- Sourced Paper: [[2512.08624v1.pdf]]
-### Code Implementation of Simple NN that replicates CT-HYB
-
-- Choose toy system
-- Run toy system on TRIQS to check ground truth
-- I chose YBCO as the toy system and ran the SCF cycle using Quantum Espresso. 
-- The benchmarking is the DOS provided above. 
-
-
-#### Single Band
-#### Multi Band
