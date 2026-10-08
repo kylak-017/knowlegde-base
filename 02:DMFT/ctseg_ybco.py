@@ -40,9 +40,7 @@ Sigma_prev = None
 
 for iteration in range(max_loops):
     if mpi.is_master_node():
-        print(f"\n==========================================")
         print(f"   DMFT Iteration (CT-SEG) {iteration+1} / {max_loops}")
-        print(f"==========================================")
 
     G_loc = SK.extract_G_loc()
 

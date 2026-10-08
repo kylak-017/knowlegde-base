@@ -10,9 +10,9 @@ from triqs.operators import n
 # 1. Physics & Simulation Parameters
 # ---------------------------------------------------------
 seed = "ybco"
-beta = 40.0             # Inverse temperature (1/eV) ~ 290 K
+beta = 128.94             # Inverse temperature (1/eV) ~ 90 K
 U = 6.0                 # On-site Coulomb interaction (eV)
-max_loops = 20          # Maximum DMFT iterations
+max_loops = 50          # Maximum DMFT iterations
 mix = 0.4               # Self-energy mixing factor
 n_iw = 1025             # Matsubara frequency points
 conv_threshold = 0.001  # Convergence threshold (eV) on Im Sigma(iw_0)
@@ -20,7 +20,7 @@ conv_threshold = 0.001  # Convergence threshold (eV) on Im Sigma(iw_0)
 # ---------------------------------------------------------
 # 2. Initialize SumkDFT & Format Blocks
 # ---------------------------------------------------------
-SK = SumkDFT(hdf_file=f"{seed}.h5", use_dft_blocks=True)
+SK = SumkDFT(hdf_file=f"{seed}.h5", use_dft_blocks=True, beta=beta, n_iw=n_iw)
 n_inequiv = max(SK.corr_to_inequiv) + 1
 
 raw_struct = SK.gf_struct_solver[0]
@@ -41,10 +41,12 @@ if mpi.is_master_node():
 # ---------------------------------------------------------
 # 3. Initial Zero Self-Energy
 # ---------------------------------------------------------
-mesh = MeshImFreq(beta=beta, statistic='Fermion', n_iw=n_iw)
+mesh = SK.mesh 
+
 Sigma_init = BlockGf(mesh=mesh, gf_struct=gf_struct)
 Sigma_init.zero()
 
+SK.put_Sigma([Sigma_init] * n_inequiv)
 SK.put_Sigma([Sigma_init] * n_inequiv)
 
 # ---------------------------------------------------------
@@ -61,9 +63,7 @@ Sigma_prev = None
 
 for iteration in range(max_loops):
     if mpi.is_master_node():
-        print(f"\n==========================================")
         print(f"   DMFT Iteration (CT-HYB) {iteration+1} / {max_loops}")
-        print(f"==========================================")
 
     # A. Lattice Green's function
     G_loc = SK.extract_G_loc()
